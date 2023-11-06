@@ -33,13 +33,16 @@ public class Simple extends HttpServlet {
 //        response.setHeader("Set-Cookie", "firstName=Andrii; lastName=Korotkov;");
 
 //        // TODO set cookies to response use HttpServletResponse method
-//        response.addCookie(new Cookie("firstName", "Andrii"));
-//        response.addCookie(new Cookie("lastName", "Korotkov"));
+//        response.addCookie(new Cookie("firstName", "AndriiQwerty"));
+//        response.addCookie(new Cookie("lastName", "Korotkov123456"));
 
 //        // TODO create session if not exist
 //        HttpSession session = request.getSession(true);
 //        session.setAttribute("user", new User("Session", "User"));
-//        session.setMaxInactiveInterval(20);
+//        session.setMaxInactiveInterval(10);
+//        User sessionUser = (User) session.getAttribute("user");
+//        System.out.println("firstName ---> " + sessionUser.getFirstName());
+//        System.out.println("---->>> " + session.getId());
 
         PrintWriter out = response.getWriter();
         out.print("<html><body>");
@@ -67,7 +70,7 @@ public class Simple extends HttpServlet {
     }
 
     @Override
-    protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -75,7 +78,7 @@ public class Simple extends HttpServlet {
         out.print("<h3>Hello World with New Servlet POST!</h3>");
 
         Arrays.stream(request.getCookies()).toList().forEach(cookie -> {
-            out.print("<p>2 - Cookie name = ${name}; Cookie value = ${value}</p>"
+            out.print("<p>POST - Cookie name = ${name}; Cookie value = ${value}</p>"
                     .replace("${name}", cookie.getName())
                     .replace("${value}", cookie.getValue()));
         });
