@@ -30,7 +30,7 @@ public class Simple extends HttpServlet {
         response.setContentType("text/html");
 
 //        // TODO set cookies to response use custom option
-        response.setHeader("Set-Cookie", "firstName=Andrii; lastName=Korotkov;");
+//        response.setHeader("Set-Cookie", "firstName=Andrii; lastName=Korotkov;");
 
 //        // TODO set cookies to response use HttpServletResponse method
 //        response.addCookie(new Cookie("firstName", "Andrii"));
