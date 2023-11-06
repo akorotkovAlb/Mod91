@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 
 // for creating war file -> compiler:compile -> war:war
-@WebServlet(value = "/Simple")
+@WebServlet(value = "/simple")
 public class Simple extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
